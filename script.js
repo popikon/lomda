@@ -1,0 +1,209 @@
+const CHAPTERS_PART = [
+    [],   //מסך פתיחה
+    ['intro'],
+    ['document-build'],        //מבוא
+    ['chap1-page'],        //פרק 1
+    ['chap2-page'],        //פרק 2
+    ['chap3-page'],        //פרק 3
+    ['chap4-page'],
+    ['finale'],
+];
+
+const TOPICS_ORDER = ["employment-data", "tax-data", "payment-data", "funds-data"];
+const QUES_ANSWERS = ['ques1-ans1', 'ques2-ans3', 'ques3-ans2', 'ques4-ans1', 'ques5-ans3', 'ques6-ans2', 'ques7-ans2'];
+const NUM_OF_CHAPS = 7;
+const PROGRESS_CHANGE = [['5vh', '55vh solid #2f3043'], ['14vh', '46vh solid #2f3043'], ['23vh', '37vh solid #2f3043'], ['32vh', '28vh solid #2f3043'], ['41vh', '19vh solid #2f3043'], ['50vh', '10vh solid #2f3043'], ['60vh', '.5vh solid #2f3043']];
+const QUESTIONS_PAGES = ["chap3-page6", "chap3-page7", "chap4-page5", "chap4-page6", "chap6-page2", "chap6-page3", "chap6-page4"];
+let questionsSolved = [false, false, false, false, false, false, false];
+let currentPart;
+let page;
+let infos;
+let clicked;
+let extra;
+let ansOptions;
+let currentQues;
+let wantedInfo;
+window.addEventListener("load", () => {
+    for (let i=1; i<=NUM_OF_CHAPS; i++) {
+        document.getElementById(`chap-num${i}`).addEventListener("mouseenter", openChap);
+        document.getElementById(`chap-num${i}`).addEventListener("mouseleave", closeChap);
+        document.getElementById(`chap-num${i}`).addEventListener("click", manageChap);
+    };
+    currentPart = 0;
+    page = 1;
+    document.getElementById('back-button').addEventListener("click",lastPart);
+    document.getElementById('next-button').addEventListener("click",nextpart);
+
+    infoOptions = document.getElementsByClassName("info-icon");
+    for (i = 0; i < infoOptions.length; i++) {
+        infoOptions[i].addEventListener('click', infoImage);
+    };
+
+    // infos = document.querySelectorAll('.info-div');
+    // extra = true;
+    // ansOptions = document.getElementsByClassName("ans-option");
+    // document.getElementById("makbil-button").addEventListener("click", chap2Manager);
+    // for (i = 0; i < ansOptions.length; i++) {
+    //     ansOptions[i].addEventListener('click', quesManager)
+    // };
+
+    // increaseOptions = document.getElementsByClassName("expand-size-icon");
+    // for (i = 0; i < increaseOptions.length; i++) {
+    //     increaseOptions[i].addEventListener('click', increaseSizeImage);
+    // };
+
+
+    // document.getElementById(`chap-num1`).addEventListener("mouseenter", openChap);
+    // document.getElementById(`chap-num1`).addEventListener("mouseleave", closeChap);
+    // document.getElementById(`chap-num1`).addEventListener("click", manageChap);
+});
+
+const nextpart = () => {
+    document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="none";
+    if (currentPart >= CHAPTERS_PART[page].length - 1 || page === 0) {
+        document.getElementById(`chap-num${page}`).style.color="#2f3043";
+        page++;
+        document.getElementById(`chap-num${page}`).style.color="#396c84";
+        document.getElementById(`chap-num${page}`).addEventListener("mouseenter", openChap);
+        document.getElementById(`chap-num${page}`).addEventListener("mouseleave", closeChap);
+        document.getElementById(`chap-num${page}`).addEventListener("click", manageChap);
+        if (page < 7) {
+            document.getElementById("invisible-num-div").style.height = `${100 - page * 14.38}%`;
+        } else {
+            document.getElementById("invisible-num-div").style.height = `0`;
+        }
+        currentPart = 0;
+        document.getElementById("progress").style.height = `${PROGRESS_CHANGE[page-1][0]}`;
+        document.getElementById("progress").style.borderBottom = `${PROGRESS_CHANGE[page-1][1]}`;
+    } else {
+        currentPart++;
+    };
+    document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="block";
+    if (QUESTIONS_PAGES.includes(CHAPTERS_PART[page][currentPart])) {
+        if (questionsSolved[QUESTIONS_PAGES.indexOf(CHAPTERS_PART[page][currentPart])] === false) {
+            document.getElementById("next-button").style.display = "none";
+        } else {
+            document.getElementById("next-button").style.display = "block";
+        };
+        console.log(QUESTIONS_PAGES.indexOf(CHAPTERS_PART[page][currentPart]))
+        console.log(questionsSolved);
+    };
+    if (CHAPTERS_PART[page][currentPart] === "finale") {
+            document.getElementById("next-button").style.display = "none";
+    };
+};
+
+const lastPart = () => {
+    document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="none";
+    if (currentPart <= 0) {
+        document.getElementById(`chap-num${page}`).style.color="#2f3043";
+        page--;
+        if (page >= 1) {
+            document.getElementById("progress").style.height = `${PROGRESS_CHANGE[page-1][0]}`;
+            document.getElementById("progress").style.borderBottom = `${PROGRESS_CHANGE[page-1][1]}`;
+            document.getElementById(`chap-num${page}`).style.color="#396c84";
+        }
+        if (page === 0) {
+            window.location.href=`index.html`;
+        }
+        currentPart = (CHAPTERS_PART[page].length) - 1;
+    } else {
+        currentPart--;
+    };
+    
+    document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="block";
+    if (CHAPTERS_PART[page][currentPart] !== "chap6-fin") {
+        document.getElementById("next-button").style.display = "block";
+    };
+    if (page === 0 && currentPart === 0) {
+        window.location.href=`index.html`;
+    }
+};
+
+// const quesManager = (event) => {
+//     clickedAns = event.target.id;
+//     currentQues = clickedAns.split("-", 1);
+//     currentQues = currentQues[0];
+//     for (i = 1; i <= 4; i++) {
+//         document.getElementById(`${currentQues}-ans${i}`).style.backgroundColor = "";
+//     };
+//     document.getElementById(clickedAns).style.backgroundColor = "#bfe1f1";
+//     document.getElementById(`${currentQues}-send-ans`).style.display = "block";
+//     document.getElementById(`${currentQues}-send-ans`).addEventListener('click', checkAns);
+// };
+
+// const checkAns = () => {
+//     document.getElementById(`${currentQues}-send-ans`).style.display = "none";
+//     if (clickedAns === QUES_ANSWERS[currentQues.substr(currentQues.length - 1) - 1]) {
+//         document.getElementById(clickedAns).style.backgroundColor = "#81ef85";
+//         document.getElementById(`checked-ans-text-${currentQues}`).innerText = "כל הכבוד! תשובה נכונה!";
+//     } else {
+//         document.getElementById(clickedAns).style.backgroundColor = "#ef8192";
+//         document.getElementById(`checked-ans-text-${currentQues}`).innerText = `טעות, התשובה הנכונה היא: ${document.getElementById(QUES_ANSWERS[currentQues.substr(currentQues.length - 1) - 1]).innerText} `;
+//     };
+//     document.getElementById(`checked-ans-text-${currentQues}`).style.opacity = "1";
+//     document.getElementById(`invisible-div-${currentQues}`).style.display="block";
+//     document.getElementById("next-button").style.display="block";
+//     questionsSolved[(currentQues.charAt(currentQues.length - 1))-1] = true;
+//     console.log(questionsSolved);
+
+// };
+
+// const increaseSizeImage = (event) => {
+//     let wantedIncrease = event.target.id;
+//     wantedIncrease = wantedIncrease.split("-");
+//     wantedIncrease = `${wantedIncrease[0]}-${wantedIncrease[1]}`;
+//     document.getElementById("wanted-increase-image").setAttribute('src', `assets/chap${page - 1}/${wantedIncrease}.svg`);
+//     document.getElementById("wanted-increase-image").style.height = "70vh";
+//     document.getElementById("increase-image-div").style.display = "flex";
+// };
+
+const infoImage = (event) => {
+    let wantedInfo = event.target.id;
+    console.log(wantedInfo);
+    if (wantedInfo === "frontal-hours" || wantedInfo === "job-hours") {
+        wantedInfo = "frontal-hours-job";
+    } else if (wantedInfo === "employment-data-more-rank1" || wantedInfo === "employment-data-more-rank2") {
+        wantedInfo = "employment-data-more-rank";
+    }
+    document.getElementById("wanted-info-image").setAttribute('src', `assets/${TOPICS_ORDER[page - 3]}/${wantedInfo}.svg`);
+    document.getElementById("info-image-div").style.display = "flex";
+
+    if (wantedInfo === "other-funds") {
+        document.getElementById("").style.transform = "translateY(100%)";
+    }
+};
+
+const openChap = (event) => {
+    document.getElementById(`${event.target.id}-text`).style.width="100%";
+    document.getElementById(`${event.target.id}-text`).style.paddingLeft="10%";
+    document.getElementById(`${event.target.id}-text`).style.padding="1%";
+    document.getElementById(`${event.target.id}-text`).style.paddingLeft="10%";
+    document.getElementById(`${event.target.id}-text`).style.borderTopLeftRadius="1vh";
+    document.getElementById(`${event.target.id}-text`).style.borderBottomLeftRadius="1vh";
+    document.getElementById("chap-text-boxes").style.width="13%";
+};
+
+const closeChap = (event) => {
+    document.getElementById(`${event.target.id}-text`).style.width="0";
+    document.getElementById(`${event.target.id}-text`).style.paddingLeft="0";
+    document.getElementById(`${event.target.id}-text`).style.padding="0";
+    document.getElementById(`${event.target.id}-text`).style.paddingLeft="0";
+    document.getElementById(`${event.target.id}-text`).style.borderTopLeftRadius="0";
+    document.getElementById(`${event.target.id}-text`).style.borderBottomLeftRadius="0";
+    document.getElementById("chap-text-boxes").style.width="0";
+};
+
+const manageChap = (event) => {
+    for (let i=1; i<=NUM_OF_CHAPS; i++) {
+        document.getElementById(`chap-num${i}`).style.color="#2f3043";
+    };
+    document.getElementById(event.target.id).style.color="#396c84";
+    document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="none";
+    page = event.target.id;
+    page = page.charAt(page.length - 1);
+    currentPart = 0;
+    document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="block";
+    document.getElementById("progress").style.height = `${PROGRESS_CHANGE[page-1][0]}`;
+    document.getElementById("progress").style.borderBottom = `${PROGRESS_CHANGE[page-1][1]}`;
+};
