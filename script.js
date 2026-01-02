@@ -160,7 +160,6 @@ const lastPart = () => {
 
 const infoImage = (event) => {
     let wantedInfo = event.target.id;
-    console.log(wantedInfo);
     if (wantedInfo === "frontal-hours" || wantedInfo === "job-hours") {
         wantedInfo = "frontal-hours-job";
     } else if (wantedInfo === "employment-data-more-rank1" || wantedInfo === "employment-data-more-rank2") {
@@ -206,4 +205,5 @@ const manageChap = (event) => {
     document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="block";
     document.getElementById("progress").style.height = `${PROGRESS_CHANGE[page-1][0]}`;
     document.getElementById("progress").style.borderBottom = `${PROGRESS_CHANGE[page-1][1]}`;
+
 };
