@@ -48,7 +48,6 @@ body{
 }
 
 #chap1-page {
-    border: red solid 2px;
     width: 86vw;
     height: 100vh;
     position: absolute;
@@ -1601,4 +1600,5 @@ body{
     right: 90%;
     animation: close-increase infinite 2s;
     transition: all .5s;
+
 }
