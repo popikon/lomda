@@ -141,7 +141,12 @@ const manageChap = (event) => {
     page = event.target.id;
     page = page.charAt(page.length - 1);
     currentPart = 0;
-    document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="block";
+    if (CHAPTERS_PART[page][currentPart] === "intro" || CHAPTERS_PART[page][currentPart] === "finale") {
+        document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="flex";
+    } else {
+        document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="block";
+    };
     document.getElementById("progress").style.height = `${PROGRESS_CHANGE[page-1][0]}`;
     document.getElementById("progress").style.borderBottom = `${PROGRESS_CHANGE[page-1][1]}`;
 };
+
