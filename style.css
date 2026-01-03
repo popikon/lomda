@@ -3,6 +3,11 @@
     src: url(assets/fonts/avigul-bold-fm.098e37816243b45163715f653.86cd763bc8a25b63e23707da1110b42d.woff2);
 }
 
+@font-face {
+    font-family: avigul;
+    src: url(assets/fonts/avigul-regular-fm.cb107146ee1ea2077c221e.0c9d824a125bac7e0d7aeb30dd7b0cdf.woff2);
+}
+
   
 @font-face {
     font-family: aharoni;
@@ -24,12 +29,62 @@ body{
 }
 
 #intro {
+    width: 86vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+
+.intro-text {
+    width: 70%;
+    position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.box-gif {
+    height: 35%;
+    position: relative;
+}
+
+#finale {
+    width: 86vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+
+.finale-text {
+    width: 95%;
+    position: relative;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.finale-gif {
+    width: 22%;
+    position: relative;
+    /* right: 39%; */
+}
+
+/* 
+#intro {
     position: absolute;
     width: 65vw;
     max-height: 80vh;
     right: 24.5vw;
     top: 2vh;
-}
+} */
 
 #document-build {
     position: absolute;
@@ -43,7 +98,7 @@ body{
 .employment-data-text {
     height: 30%;
     position: relative;
-    right: 15%;
+    right: 20%;
     top: 4%;
 }
 
@@ -106,9 +161,9 @@ body{
 }
 
 .employment-data-table {
-    width: 30%;
+    width: 25%;
     position: relative;
-    right: 35%;
+    right: 36.5%;
 }
 
 #employment-data-table-container {
@@ -118,35 +173,53 @@ body{
     top: 6%;
 }
 
+#employment-data-table-container .info-icon {
+    width: 1.5%;
+}
+
+#employment-data-table-container .info-icon:hover {
+    width: 1.7%;
+}
 
 #employment-data-started-working {
     position: absolute;
-    right: 35.3%;
+    right: 36.3%;
     top: 24%;
 }
 
 #employment-data-job {
     position: absolute;
-    right: 35.3%;
+    right: 36.3%;
     top: 36%;
 }
 
 #employment-data-rank {
     position: absolute;
-    right: 35.3%;
+    right: 36.3%;
     top: 49%;
 }
 
 #employment-data-more-rank1 {
     position: absolute;
-    right: 35.3%;
+    right: 36.3%;
     top: 58%;
 }
 
 #employment-data-more-rank2 {
     position: absolute;
-    right: 35.3%;
+    right: 36.3%;
     top: 80%;
+}
+
+#chap1-page p {
+    color: #396c84;
+    width: 60%;
+    position: relative;
+    top: 6%;
+    right: 19%;
+    text-align: center;
+    font-size: 1.5vmax;
+    font-family: avigul;
 }
 
 #chap2-page {
@@ -165,29 +238,36 @@ body{
     top: 5%;
 }
 
-.tax-table {
-    width: 27%;
+#chap2-page div {
+    width: 100%;
+    height: 100%;
     position: relative;
-    top: 5%;
+    top: 6%;
+    height: fit-content;
+}
+
+.tax-table {
+    width: 25%;
+    position: relative;
     right: 36.5%;
 }
 
 #tax-precentage {
    position: absolute; 
-   right: 37%;
-   top: 58.9%;
+   right: 36.8%;
+   top: 54%;
 }
 
 #tax-points {
    position: absolute; 
-   right: 37%;
-   top: 61.5%;
+   right: 36.8%;
+   top: 59.5%;
 }
 
 #tax-years {
     position: absolute;
-    right: 37%;
-    top: 68%;
+    right: 36.8%;
+    top: 73%;
 }
 
 #chap3-page {
@@ -1601,42 +1681,4 @@ body{
     animation: close-increase infinite 2s;
     transition: all .5s;
 
-}
-
-#mobile-warning {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    z-index: 99999;
-    background-color: #f4f6f9;
-    font-family: avigulBold;
-    color: #396c84;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
-    display: none;
-}
-
-#mobile-warning p {
-    font-size: 4.5vmax;
-    width: 80vw;
-    text-align: center;
-}
-
-#mobile-warning img {
-    height: 25vh;
-    max-width: 80vw;
-}
-
-#mobile-warning div {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
-
-@media (max-width: 768px) {
-  #mobile-warning {
-    display: block;
-  }
 }

@@ -4,17 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>לומדת הבנת תלוש השכר</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
-    <div id="mobile-warning">
-        <p>שימו לב: הלומדה אינה נתמכת בשלב זה במכשירים ניידים. <br>
- מומלץ להיכנס ללומדה דרך מחשב לצפייה נוחה וברורה בתכנים.</p>
-        <div>
-            <img src="assets/box-gif.gif" alt="box-gif">
-        </div>
-    </div>
     <div class="chap-ruler">
         <img src="assets/logo.svg" alt="logo" class="logo"/>
         <div class="chap-ruler-selector">
@@ -23,7 +17,7 @@
             </div>
             <div id="chap-nums">
                 <div id="invisible-num-div"></div>
-                <p id="chap-num1" class="chap-num-text" style="padding-right: 5% color: rgb(57, 108, 132);">מבוא</p>
+                <p id="chap-num1" class="chap-num-text" style="padding-right: 5%; color: rgb(57, 108, 132);">מבוא</p>
                 <p id="chap-num2" class="chap-num-text">פרק 1</p>
                 <p id="chap-num3" class="chap-num-text">פרק 2</p>
                 <p id="chap-num4" class="chap-num-text">פרק 3</p>
@@ -43,7 +37,11 @@
             </div>
             <p class="text-instruction-chap">לחצו על פרק כדי לעבור אליו</p>
     </div>
-    <img src="assets/intro.svg" alt="intro" id="intro"/>
+    <!-- <img src="assets/intro.svg" alt="intro" id="intro"/> -->
+     <div id="intro">
+        <img src="assets/intro-text.svg" alt="intro-text" class="intro-text"/>
+        <img src="assets/box-gif.gif" alt="box-gif" class="box-gif">
+     </div>
     <img src="assets/document-build.svg" alt="docuemnt-build" id="document-build"/>
     
     <div id="chap1-page">
@@ -63,6 +61,7 @@
             <img src="assets/info-icon.svg" alt="info-icon" class="info-icon" id="employment-data-more-rank1">
             <img src="assets/info-icon.svg" alt="info-icon" class="info-icon" id="employment-data-more-rank2">
         </div>
+        <p>*אם ברצונכם לבדוק את הנתונים שלכם, תוכלו לגשת לאתר פורטל עובדי הוראה, ללחוץ על כפתור מרחב מנהלי ושם יופיעו הנתונים הרלוונטיים.</p>
     </div>
 
     <div id="chap2-page">
@@ -94,296 +93,23 @@
         </div>
     </div>
 
-    <img src="assets/finale.gif" alt="intro" id="finale"/>
-
-
-
-    <!-- <div id="chap3-page6">
-        <img src="assets/chap3/title-ques1.svg" alt="title-ques1" class="title-ques"/>
-        <div id="question-text-div">
-            <p id="question-text">מהו הפתח המקסימלי בקיר חוץ (במ"ר) המותר ביחס למקרה המוצג? </p>
-            <div id="invisible-div-ques1" class="invisible-div"></div>
-            <p id="ques1-ans1" class="ans-option"><b class="ans-choose" id="ques1-ans1">1. </b>1.2</p>
-            <p id="ques1-ans2" class="ans-option"><b class="ans-choose" id="ques1-ans2">2. </b>ללא פתח</p>
-            <p id="ques1-ans3" class="ans-option"><b class="ans-choose" id="ques1-ans3">3. </b>3</p>
-            <p id="ques1-ans4" class="ans-option"><b class="ans-choose" id="ques1-ans4">4. </b>5</p>
-            <img src="assets/question-instruction-text.svg" alt="question-instruction-text" class="question-instruction-text"/>
-            <button id="ques1-send-ans" class="send-ans-btn">בדיקת תשובה</button>
-            <p id="checked-ans-text-ques1">כל הכבוד! תשובה נכונה!</p>
-        </div>
-        <div id="question-img-div">
-            <img src="assets/expand-size.svg" alt="expand-size" id="question1-img-expand" class="expand-size-icon"/>
-            <img src="assets/chap3/question1-img.svg" alt="question1-img" class="question1-img"/>
-        </div>
-        <div id="question-table-div">
-            <img src="assets/expand-size.svg" alt="expand-size" id="question1-table-expand" class="expand-size-icon"/>
-            <img src="assets/chap3/question1-table.svg" alt="question1-table" class="question1-table"/>
-        </div>
+    <!-- <img src="assets/finale.gif" alt="intro" id="finale"/> -->
+    <div id="finale">
+        <img src="assets/finish-text.svg" alt="intro-text" class="finale-text"/>
+        <img src="assets/finish-gif.gif" alt="box-gif" class="finale-gif">
     </div>
-    <div id="chap3-page7">
-        <img src="assets/chap3/title-ques2.svg" alt="title-ques1" class="title-ques"/>
-        <div id="question-text-div">
-            <p id="question-text">מהו הפתח המקסימלי בקיר חוץ (במ"ר) המותר ביחס למקרה המוצג?  </p>
-            <div id="invisible-div-ques2" class="invisible-div"></div>
-            <p id="ques2-ans1" class="ans-option"><b class="ans-choose" id="ques2-ans1">1. </b>3</p>
-            <p id="ques2-ans2" class="ans-option"><b class="ans-choose" id="ques2-ans2">2. </b>אין מגבלה</p>
-            <p id="ques2-ans3" class="ans-option"><b class="ans-choose" id="ques2-ans3">3. </b>4</p>
-            <p id="ques2-ans4" class="ans-option"><b class="ans-choose" id="ques2-ans4">4. </b>8</p>
-            <img src="assets/question-instruction-text.svg" alt="question-instruction-text" class="question-instruction-text"/>
-            <button id="ques2-send-ans" class="send-ans-btn">בדיקת תשובה</button>
-            <p id="checked-ans-text-ques2">כל הכבוד! תשובה נכונה!</p>
-        </div>
-        <div id="question-img-div">
-            <img src="assets/expand-size.svg" alt="expand-size" id="question2-img-expand" class="expand-size-icon"/>
-            <img src="assets/chap3/question2-img.svg" alt="question2-img" class="question1-img"/>
-        </div>
-        <div id="question-table-div">
-            <img src="assets/expand-size.svg" alt="expand-size" id="question2-table-expand" class="expand-size-icon"/>
-            <img src="assets/chap3/question2-table.svg" alt="question2-table" class="question1-table"/>
-        </div>
-    </div>
-    <img src="assets/chap3/chap3-page8.svg" alt="page3" class="page-design-gen" id="chap3-page8"/>
-
-    <img src="assets/chap4/start-chap4.svg" alt="start-chap4" id="start-chap4"/>
-    <img src="assets/chap4/page1.svg" alt="page1" class="page-design-gen" id="chap4-page1"/>
-    <img src="assets/chap4/page2.svg" alt="page2" class="page-design-gen" id="chap4-page2"/>
-    <div id="chap4-page3">
-        <div id="chap4-page3-main">
-            <img src="assets/chap4/page3-main.svg" alt="chap4-info1" class="chap2-info1"/>
-            <div id="chap4-page3-expamples">
-                <div class="page4-exp-imgs-div">
-                    <img src="assets/expand-size.svg" alt="expand-size" id="page4-exp1-expand" class="expand-size-icon"/>
-                    <img src="assets/chap4/page4-exp1.svg" alt="page4-exp1" id="page4-exp1" class="page4-exp-imgs"/>
-                </div>
-                <div class="page4-exp-imgs-div">
-                    <img src="assets/expand-size.svg" alt="expand-size" id="page4-exp2-expand" class="expand-size-icon"/>
-                    <img src="assets/chap4/page4-exp2.svg" alt="page4-exp2" id="page4-exp2" class="page4-exp-imgs"/>
-                </div>
-                <div class="page4-exp-imgs-div">
-                    <img src="assets/expand-size.svg" alt="expand-size" id="page4-exp3-expand" class="expand-size-icon"/>
-                    <img src="assets/chap4/page4-exp3.svg" alt="page4-exp3-expand" id="page4-exp3" class="page4-exp-imgs"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="chap4-page4">
-        <img src="assets/chap4/page4-title1.svg" alt="title-ques1" class="title-page4-chap4"/>
-        <video  class="videos" controls>
-            <source src="assets/chap4/vid3-migun.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <div id="chap4-page5">
-        <img src="assets/chap4/ques1-title.svg" alt="title-ques1" class="title-ques"/>
-        <div id="question-text-div">
-            <p id="question-text">האם במקרה המוצג נדרש לתכנן קיר מגן? </p>
-            <div id="invisible-div-ques3" class="invisible-div"></div>
-            <p id="ques3-ans1" class="ans-option"><b class="ans-choose" id="ques3-ans1">1. </b>כן, חלונות מס, 1 ו-2 לא עומדים בגודל הפתח המותר במ"ר.</p>
-            <p id="ques3-ans2" class="ans-option"><b class="ans-choose" id="ques3-ans2">2. </b>כן, חלון מס' 3 לא עומד בתנאי הטבלה וכן המרחק מהקיר.</p>
-            <p id="ques3-ans3" class="ans-option"><b class="ans-choose" id="ques3-ans3">3. </b>לא, פתחי החלונות תקינים וכן המרחקים המותרים ואין צורך בקיר מגן.</p>
-            <p id="ques3-ans4" class="ans-option"><b class="ans-choose" id="ques3-ans4">4. </b>לא, רק פתח מס' 3 אינו תקין אך אין צורך בקיר מגן.</p>
-            <img src="assets/question-instruction-text.svg" alt="question-instruction-text" class="question-instruction-text"/>
-            <button id="ques3-send-ans" class="send-ans-btn">בדיקת תשובה</button>
-            <p id="checked-ans-text-ques3">כל הכבוד! תשובה נכונה!</p>
-        </div>
-        <div id="question-img-div">
-            <img src="assets/expand-size.svg" alt="expand-size" id="img-ques1-expand" class="expand-size-icon"/>
-            <img src="assets/chap4/img-ques1.svg" alt="question2-img" class="question1-img"/>
-        </div>
-
-        <div id="question-table-div1">
-            <img src="assets/expand-size.svg" alt="expand-size" id="table1-ques1-expand" class="expand-size-icon"/>
-            <img src="assets/chap4/table1-ques1.svg" alt="table1" class="question1-table"/>
-        </div>
-        <div id="question-table-div2">
-            <img src="assets/expand-size.svg" alt="expand-size" id="table2-ques1-expand" class="expand-size-icon"/>
-            <img src="assets/chap4/table2-ques1.svg" alt="table2" class="question1-table"/>
-        </div>
-    </div>
-
-    <div id="chap4-page6">
-        <img src="assets/chap4/ques2-title.svg" alt="title-ques2" class="title-ques"/>
-        <div id="question-text-div">
-            <p id="question-text">האם במקרה המוצג נדרש לתכנן קיר מגן נוסף?  </p>
-            <div id="invisible-div-ques4" class="invisible-div"></div>
-            <p id="ques4-ans1" class="ans-option"><b class="ans-choose" id="ques4-ans1">1. </b>כן, חלון מס' 1 לא עומד בתנאי הטבלה לפתח מותר.</p>
-            <p id="ques4-ans2" class="ans-option"><b class="ans-choose" id="ques4-ans2">2. </b>כן, חלון מס' 1 לא עומד בתנאי הטבלה לפתח מותר וכן המרחק מהקיר.</p>
-            <p id="ques4-ans3" class="ans-option"><b class="ans-choose" id="ques4-ans3">3. </b>לא, פתחי החלונות תקינים וכן המרחקים המותרים ואין צורך בקיר מגן.</p>
-            <p id="ques4-ans4" class="ans-option"><b class="ans-choose" id="ques4-ans4">4. </b> לא, רק פתח מס' 3 אינו תקין אך אין צורך בקיר מגן.</p>
-            <img src="assets/question-instruction-text.svg" alt="question-instruction-text" class="question-instruction-text"/>
-            <button id="ques4-send-ans" class="send-ans-btn">בדיקת תשובה</button>
-            <p id="checked-ans-text-ques4">כל הכבוד! תשובה נכונה!</p>
-        </div>
-        <div id="question-img-div">
-            <img src="assets/expand-size.svg" alt="expand-size" id="img-ques2-expand" class="expand-size-icon"/>
-            <img src="assets/chap4/img-ques2.svg" alt="question2-img" class="question1-img"/>
-        </div>
-
-        <div id="question-table-div1">
-            <img src="assets/expand-size.svg" alt="expand-size" id="table1-ques1-expand" class="expand-size-icon"/>
-            <img src="assets/chap4/table1-ques1.svg" alt="table1" class="question1-table"/>
-        </div>
-        <div id="question-table-div2">
-            <img src="assets/expand-size.svg" alt="expand-size" id="table2-ques1-expand" class="expand-size-icon"/>
-            <img src="assets/chap4/table2-ques1.svg" alt="table2" class="question1-table"/>
-        </div>
-    </div>
-
-    <img src="assets/chap4/page7.svg" alt="page7" class="page-design-gen" id="chap4-page7"/>
-    <img src="assets/chap5/start-chap5.svg" alt="start-chap5" id="start-chap5"/>
-    <img src="assets/chap5/page1.svg" alt="page1" class="page-design-gen" id="chap5-page1"/>
-    <img src="assets/chap5/page2.svg" alt="page2" class="page-design-gen" id="chap5-page2"/>
-    <img src="assets/chap5/page3.svg" alt="page3" class="page-design-gen" id="chap5-page3"/>
-
-    <div id="chap5-page4">
-        <img src="assets/chap5/page4-main.svg" alt="chap5-info1" class="chap2-info1"/>
-        <div id="chap4-page3-expamples">
-            <div class="page4-exp-imgs-div">
-                <img src="assets/expand-size.svg" alt="expand-size" id="page4-img1-expand" class="expand-size-icon"/>
-                <img src="assets/chap5/page4-img1.svg" alt="page4-exp1" id="page4-exp1" class="page4-exp-imgs"/>
-            </div>
-            <div class="page4-exp-imgs-div">
-                <img src="assets/expand-size.svg" alt="expand-size" id="page4-img2-expand" class="expand-size-icon"/>
-                <img src="assets/chap5/page4-img2.svg" alt="page4-exp2" id="page4-exp2" class="page4-exp-imgs"/>
-            </div>
-        </div>
-    </div>
-    
-    <img src="assets/chap5/page5.svg" alt="page2" class="page-design-gen" id="chap5-page5"/>
-
-    <div id="chap5-page6">
-        <img src="assets/chap5/page6-main.svg" alt="chap5-info1" class="chap2-info1"/>
-        <div id="chap4-page3-expamples">
-            <div class="page4-exp-imgs-div">
-                <img src="assets/expand-size.svg" alt="expand-size" id="page4-img1-expand" class="expand-size-icon"/>
-                <img src="assets/chap5/page6-img.svg" alt="page4-exp1" id="page4-exp1" class="page4-exp-imgs"/>
-            </div>
-        </div>
-    </div>
-    <div id="chap5-page7">
-        <img src="assets/chap5/page7-title.svg" alt="title-ques1" class="title-page4-chap4"/>
-        <video  class="videos" controls>
-            <source src="assets/chap5/vid4-migun.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <img src="assets/chap5/page8.svg" alt="page8" class="page-design-gen" id="chap5-page8"/>
-    <img src="assets/chap5/page9.svg" alt="page9" class="page-design-gen" id="chap5-page9"/>
-    
-    
-    <img src="assets/chap6/start-chap6.svg" alt="start-chap6" id="start-chap6"/>
-    <img src="assets/chap6/page1.svg" alt="page1" class="page-design-gen" id="chap6-page1"/>
-    
-    <div id="chap6-page2">
-        <img src="assets/chap6/ques-title.svg" alt="title-ques2" class="title-ques"/>
-        <div id="question-text-div">
-            <p id="question-text">לפניכם שרטוט של מבנה לדוגמא, קבע אילו מבין האפשרויות הבאות <br>
-הנכונה ביותר ביחס לגודל הפתח המותר (במ"ר) לפי הטבלאות?</p>
-            <div id="invisible-div-ques5" class="invisible-div"></div>
-            <p id="ques5-ans1" class="ans-option"><b class="ans-choose" id="ques5-ans1">1. </b>S₁=3, S₂=1.2, S₃=1.2, S₄=5</p>
-            <p id="ques5-ans2" class="ans-option"><b class="ans-choose" id="ques5-ans2">2. </b>S₁=3, S₂=3, S₃=1.2, S₄=5</p>
-            <p id="ques5-ans3" class="ans-option"><b class="ans-choose" id="ques5-ans3">3. </b>S₁=ללא מגבלה, S₄=6, S₃=1.2, S₂=1.2</p>
-            <p id="ques5-ans4" class="ans-option"><b class="ans-choose" id="ques5-ans4">4. </b>S₁=ללא מגבלה, S₄=5, S₃=4, S₂=4</p>
-            <img src="assets/question-instruction-text.svg" alt="question-instruction-text" class="question-instruction-text"/>
-            <button id="ques5-send-ans" class="send-ans-btn">בדיקת תשובה</button>
-            <p id="checked-ans-text-ques5">כל הכבוד! תשובה נכונה!</p>
-        </div>
-        <div id="question-img-div">
-            <img src="assets/expand-size.svg" alt="expand-size" id="img-ques5-expand" class="expand-size-icon"/>
-            <img src="assets/chap6/img-ques5.svg" alt="question2-img" class="question1-img"/>
-        </div>
-
-        <div id="question-table-div1">
-            <img src="assets/expand-size.svg" alt="expand-size" id="table1-ques1-expand" class="expand-size-icon"/>
-            <img src="assets/chap6/table1-ques1.svg" alt="table1" class="question1-table"/>
-        </div>
-        <div id="question-table-div2">
-            <img src="assets/expand-size.svg" alt="expand-size" id="table2-ques1-expand" class="expand-size-icon"/>
-            <img src="assets/chap6/table2-ques1.svg" alt="table2" class="question1-table"/>
-        </div>
-    </div>
-    
-    <div id="chap6-page3">
-        <img src="assets/chap6/ques-title.svg" alt="title-ques2" class="title-ques"/>
-        <div id="question-text-div">
-            <p id="question-text">לפניכם שרטוט של מבנה לדגומא, קבעו האם נדרש קיר מגן?</p>
-            <div id="invisible-div-ques6" class="invisible-div"></div>
-            <p id="ques6-ans1" class="ans-option"><b class="ans-choose" id="ques6-ans1">1. </b>S₁=נדרש, S₂=נדרש, S₃=לא נדרש, S₄=לא נדרש</p>
-            <p id="ques6-ans2" class="ans-option"><b class="ans-choose" id="ques6-ans2">2. </b>S₁=לא נדרש, S₂=נדרש, S₃=נדרש, S₄=לא נדרש</p>
-            <p id="ques6-ans3" class="ans-option"><b class="ans-choose" id="ques6-ans3">3. </b>S₁=לא נדרש, S₂=לא נדרש, S₃=נדרש, S₄=נדרש</p>
-            <p id="ques6-ans4" class="ans-option"><b class="ans-choose" id="ques6-ans4">4. </b>S₁=נדרש, S₂=לא נדרש, S₃=לא נדרש, S₄=לא נדרש</p>
-            <img src="assets/question-instruction-text.svg" alt="question-instruction-text" class="question-instruction-text"/>
-            <button id="ques6-send-ans" class="send-ans-btn">בדיקת תשובה</button>
-            <p id="checked-ans-text-ques6">כל הכבוד! תשובה נכונה!</p>
-        </div>
-        <div id="question-img-div">
-            <img src="assets/expand-size.svg" alt="expand-size" id="img-ques6-expand" class="expand-size-icon"/>
-            <img src="assets/chap6/img-ques6.svg" alt="question2-img" class="question1-img"/>
-        </div>
-
-        <div id="question-table-div1">
-            <img src="assets/expand-size.svg" alt="expand-size" id="table1-ques1-expand" class="expand-size-icon"/>
-            <img src="assets/chap6/table1-ques1.svg" alt="table1" class="question1-table"/>
-        </div>
-        <div id="question-table-div2">
-            <img src="assets/expand-size.svg" alt="expand-size" id="table2-ques1-expand" class="expand-size-icon"/>
-            <img src="assets/chap6/table2-ques1.svg" alt="table2" class="question1-table"/>
-        </div>
-    </div>
-
-    <div id="chap6-page4">
-        <img src="assets/chap6/ques-title.svg" alt="title-ques2" class="title-ques"/>
-        <div id="question-text-div">
-            <p id="question-text">לפניכם שרטוט של מבנים לדוגמא,<br>
-                 קבעו את תקינות השרטוטים</p>
-            <div id="invisible-div-ques7" class="invisible-div"></div>
-            <p id="ques7-ans1" class="ans-option"><b class="ans-choose" id="ques7-ans1">1. </b>שרטוט 1 תקין, שרטוט 2 תקין</p>
-            <p id="ques7-ans2" class="ans-option"><b class="ans-choose" id="ques7-ans2">2. </b>שרטוט 1 תקין, שרטוט 2 לא תקין</p>
-            <p id="ques7-ans3" class="ans-option"><b class="ans-choose" id="ques7-ans3">3. </b>שרטוט 1 לא תקין, שרטוט 2 תקין</p>
-            <p id="ques7-ans4" class="ans-option"><b class="ans-choose" id="ques7-ans4">4. </b>שרטוט 1 לא תקין, שרטוט 2 לא תקין</p>
-            <img src="assets/question-instruction-text.svg" alt="question-instruction-text" class="question-instruction-text"/>
-            <button id="ques7-send-ans" class="send-ans-btn">בדיקת תשובה</button>
-            <p id="checked-ans-text-ques7">כל הכבוד! תשובה נכונה!</p>
-        </div>
-        <div id="question-img-div" class="first-pic">
-            <img src="assets/expand-size.svg" alt="expand-size" id="img1-ques7-expand" class="expand-size-icon"/>
-            <img src="assets/chap6/img1-ques7.svg" alt="question2-img" class="question1-img"/>
-        </div>
-        <div id="question-img-div">
-            <img src="assets/expand-size.svg" alt="expand-size" id="img2-ques7-expand" class="expand-size-icon"/>
-            <img src="assets/chap6/img2-ques7.svg" alt="question2-img" class="question1-img"/>
-        </div>
-
-        <div id="question-table-div1">
-            <img src="assets/expand-size.svg" alt="expand-size" id="table1-ques1-expand" class="expand-size-icon"/>
-            <img src="assets/chap6/table1-ques1.svg" alt="table1" class="question1-table"/>
-        </div>
-        <div id="question-table-div2">
-            <img src="assets/expand-size.svg" alt="expand-size" id="table2-ques1-expand" class="expand-size-icon"/>
-            <img src="assets/chap6/table2-ques1.svg" alt="table2" class="question1-table"/>
-        </div>
-    </div>
-
-    <img src="assets/chap6/fin-page.svg" alt="page1" class="page-design-gen" id="chap6-fin"/>
- -->
 
     <img id="next-button" class="nav-button" src="assets/next.svg" alt="next"/>
     <img id="back-button" class="nav-button" src="assets/back.svg" alt="back"/>
-    <!-- <div id="increase-image-div">
-        <img src="assets/chap3/question1-img.svg" alt="wanted-increase-image" id="wanted-increase-image"/>
-        <p id="close-increase" onclick="document.getElementById('increase-image-div').style.display='none';">X</p>
-    </div> -->
         <div id="info-image-div">
         <div>
             <img src="assets/employment-data/base-hours.svg" alt="wanted-info-image" id="wanted-info-image"/>
             <p id="close-increase" onclick="document.getElementById('info-image-div').style.display='none';">X</p>
         </div>
-
     </div>
+
 </body>
 </html>
-
 
 
 

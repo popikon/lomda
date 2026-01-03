@@ -10,18 +10,11 @@ const CHAPTERS_PART = [
 ];
 
 const TOPICS_ORDER = ["employment-data", "tax-data", "payment-data", "funds-data"];
-const QUES_ANSWERS = ['ques1-ans1', 'ques2-ans3', 'ques3-ans2', 'ques4-ans1', 'ques5-ans3', 'ques6-ans2', 'ques7-ans2'];
 const NUM_OF_CHAPS = 7;
 const PROGRESS_CHANGE = [['5vh', '55vh solid #2f3043'], ['14vh', '46vh solid #2f3043'], ['23vh', '37vh solid #2f3043'], ['32vh', '28vh solid #2f3043'], ['41vh', '19vh solid #2f3043'], ['50vh', '10vh solid #2f3043'], ['60vh', '.5vh solid #2f3043']];
-const QUESTIONS_PAGES = ["chap3-page6", "chap3-page7", "chap4-page5", "chap4-page6", "chap6-page2", "chap6-page3", "chap6-page4"];
-let questionsSolved = [false, false, false, false, false, false, false];
 let currentPart;
 let page;
 let infos;
-let clicked;
-let extra;
-let ansOptions;
-let currentQues;
 let wantedInfo;
 window.addEventListener("load", () => {
     for (let i=1; i<=NUM_OF_CHAPS; i++) {
@@ -38,24 +31,6 @@ window.addEventListener("load", () => {
     for (i = 0; i < infoOptions.length; i++) {
         infoOptions[i].addEventListener('click', infoImage);
     };
-
-    // infos = document.querySelectorAll('.info-div');
-    // extra = true;
-    // ansOptions = document.getElementsByClassName("ans-option");
-    // document.getElementById("makbil-button").addEventListener("click", chap2Manager);
-    // for (i = 0; i < ansOptions.length; i++) {
-    //     ansOptions[i].addEventListener('click', quesManager)
-    // };
-
-    // increaseOptions = document.getElementsByClassName("expand-size-icon");
-    // for (i = 0; i < increaseOptions.length; i++) {
-    //     increaseOptions[i].addEventListener('click', increaseSizeImage);
-    // };
-
-
-    // document.getElementById(`chap-num1`).addEventListener("mouseenter", openChap);
-    // document.getElementById(`chap-num1`).addEventListener("mouseleave", closeChap);
-    // document.getElementById(`chap-num1`).addEventListener("click", manageChap);
 });
 
 const nextpart = () => {
@@ -78,16 +53,11 @@ const nextpart = () => {
     } else {
         currentPart++;
     };
-    document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="block";
-    if (QUESTIONS_PAGES.includes(CHAPTERS_PART[page][currentPart])) {
-        if (questionsSolved[QUESTIONS_PAGES.indexOf(CHAPTERS_PART[page][currentPart])] === false) {
-            document.getElementById("next-button").style.display = "none";
-        } else {
-            document.getElementById("next-button").style.display = "block";
-        };
-        console.log(QUESTIONS_PAGES.indexOf(CHAPTERS_PART[page][currentPart]))
-        console.log(questionsSolved);
-    };
+    if (CHAPTERS_PART[page][currentPart] === "intro" || CHAPTERS_PART[page][currentPart] === "finale") {
+        document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="flex";
+    } else {
+        document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="block";
+    }
     if (CHAPTERS_PART[page][currentPart] === "finale") {
             document.getElementById("next-button").style.display = "none";
     };
@@ -95,6 +65,7 @@ const nextpart = () => {
 
 const lastPart = () => {
     document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="none";
+    document.getElementById("next-button").style.display = "block";
     if (currentPart <= 0) {
         document.getElementById(`chap-num${page}`).style.color="#2f3043";
         page--;
@@ -111,52 +82,20 @@ const lastPart = () => {
         currentPart--;
     };
     
-    document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="block";
-    if (CHAPTERS_PART[page][currentPart] !== "chap6-fin") {
-        document.getElementById("next-button").style.display = "block";
+    if (CHAPTERS_PART[page][currentPart] === "intro" || CHAPTERS_PART[page][currentPart] === "finale") {
+        document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="flex";
+    } else {
+        document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="block";
     };
+
+    if (CHAPTERS_PART[page][currentPart] === "finale") {
+        document.getElementById("next-button").style.display = "none";
+    }
+
     if (page === 0 && currentPart === 0) {
         window.location.href=`index.html`;
-    }
+    };
 };
-
-// const quesManager = (event) => {
-//     clickedAns = event.target.id;
-//     currentQues = clickedAns.split("-", 1);
-//     currentQues = currentQues[0];
-//     for (i = 1; i <= 4; i++) {
-//         document.getElementById(`${currentQues}-ans${i}`).style.backgroundColor = "";
-//     };
-//     document.getElementById(clickedAns).style.backgroundColor = "#bfe1f1";
-//     document.getElementById(`${currentQues}-send-ans`).style.display = "block";
-//     document.getElementById(`${currentQues}-send-ans`).addEventListener('click', checkAns);
-// };
-
-// const checkAns = () => {
-//     document.getElementById(`${currentQues}-send-ans`).style.display = "none";
-//     if (clickedAns === QUES_ANSWERS[currentQues.substr(currentQues.length - 1) - 1]) {
-//         document.getElementById(clickedAns).style.backgroundColor = "#81ef85";
-//         document.getElementById(`checked-ans-text-${currentQues}`).innerText = "כל הכבוד! תשובה נכונה!";
-//     } else {
-//         document.getElementById(clickedAns).style.backgroundColor = "#ef8192";
-//         document.getElementById(`checked-ans-text-${currentQues}`).innerText = `טעות, התשובה הנכונה היא: ${document.getElementById(QUES_ANSWERS[currentQues.substr(currentQues.length - 1) - 1]).innerText} `;
-//     };
-//     document.getElementById(`checked-ans-text-${currentQues}`).style.opacity = "1";
-//     document.getElementById(`invisible-div-${currentQues}`).style.display="block";
-//     document.getElementById("next-button").style.display="block";
-//     questionsSolved[(currentQues.charAt(currentQues.length - 1))-1] = true;
-//     console.log(questionsSolved);
-
-// };
-
-// const increaseSizeImage = (event) => {
-//     let wantedIncrease = event.target.id;
-//     wantedIncrease = wantedIncrease.split("-");
-//     wantedIncrease = `${wantedIncrease[0]}-${wantedIncrease[1]}`;
-//     document.getElementById("wanted-increase-image").setAttribute('src', `assets/chap${page - 1}/${wantedIncrease}.svg`);
-//     document.getElementById("wanted-increase-image").style.height = "70vh";
-//     document.getElementById("increase-image-div").style.display = "flex";
-// };
 
 const infoImage = (event) => {
     let wantedInfo = event.target.id;
@@ -205,5 +144,4 @@ const manageChap = (event) => {
     document.getElementById(CHAPTERS_PART[page][currentPart]).style.display="block";
     document.getElementById("progress").style.height = `${PROGRESS_CHANGE[page-1][0]}`;
     document.getElementById("progress").style.borderBottom = `${PROGRESS_CHANGE[page-1][1]}`;
-
 };
